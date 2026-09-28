@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran Siswa</title>
+
+    <!-- Memanggil file CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>FORM PENDAFTARAN SISWA</h1>
+
+        <form id="formPendaftaran">
+
+            <!-- Nama -->
+            <div class="form-group">
+                <label for="nama">Nama:</label>
+                <input
+                    type="text"
+                    id="nama"
+                    placeholder="Masukkan nama"
+                    required
+                >
+            </div>
+
+            <!-- Kelas -->
+            <div class="form-group">
+                <label>Kelas:</label>
+
+                <div class="radio-group">
+
+                    <div>
+                        <input
+                            type="radio"
+                            name="kelas"
+                            value="X PPLG 1"
+                            id="kelas1"
+                        >
+                        <label for="kelas1">X PPLG 1</label>
+                    </div>
+
+                    <div>
+                        <input
+                            type="radio"
+                            name="kelas"
+                            value="X PPLG 2"
+                            id="kelas2"
+                        >
+                        <label for="kelas2">X PPLG 2</label>
+                    </div>
+
+                    <div>
+                        <input
+                            type="radio"
+                            name="kelas"
+                            value="X PPLG 3"
+                            id="kelas3"
+                        >
+                        <label for="kelas3">X PPLG 3</label>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Jurusan -->
+            <div class="form-group">
+                <label for="jurusan">Jurusan:</label>
+
+                <select id="jurusan" required>
+                    <option value="">-- Pilih Jurusan --</option>
+                    <option value="PPLG">PPLG</option>
+                    <option value="DKV">DKV</option>
+                    <option value="TJKT">TJKT</option>
+                    <option value="AKL">AKL</option>
+                    <option value="BDP">BDP</option>
+                    <option value="MPLB">MPLB</option>
+                </select>
+            </div>
+
+            <!-- Ekskul -->
+            <div class="form-group">
+                <label for="ekskul">Ekskul:</label>
+
+                <select id="ekskul" required>
+                    <option value="">-- Pilih Ekskul --</option>
+                    <option value="Animasi">Animasi</option>
+                    <option value="Paskibra">Paskibra</option>
+                    <option value="Volly">Volly</option>
+                    <option value="Basket">Basket</option>
+                    <option value="Futsal">Futsal</option>
+                    <option value="Letsin">Letsin</option>
+                    <option value="PMR">PMR</option>
+                    <option value="Dance Modern">Dance Modern</option>
+                </select>
+            </div>
+
+            <!-- Tombol -->
+            <div class="button-group">
+                <button type="submit" id="btnTambah">
+                    Tambah Data
+                </button>
+
+                <button
+                    type="button"
+                    id="btnBatal"
+                    onclick="resetForm()"
+                >
+                    Batal
+                </button>
+            </div>
+
+        </form>
+
+        <!-- Data List -->
+        <h2>Data List</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Kelas</th>
+                    <th>Jurusan</th>
+                    <th>Ekskul</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+
+            <tbody id="dataList">
+                <tr>
+                    <td colspan="6" class="kosong">
+                        Belum ada data
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+    <!-- Memanggil file JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
